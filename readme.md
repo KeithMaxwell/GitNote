@@ -192,7 +192,7 @@ git reset --hard 1094abd
 git log
 ```
 
-但这个命令仅会显示出当前HEAD及之后的提交
+但这个命令仅会显示出当前HEAD及HEAD指针之后的提交
 
 2. 回退版本：
 
@@ -269,6 +269,11 @@ Changes not staged for commit:
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
 
 一旦你把`stupid boss`提交推送到远程版本库，你就真的惨了……
+
+总结：
+
+* `git checkout -- file`让文件回到最近一次 `git add`或`git commit`时的状态。
+* `git reset HEAD file`把文件从暂存区中取出
 
 ## 8. 删除文件
 
@@ -576,13 +581,13 @@ $ git branch
 
 创建并切换到新的`dev`分支，可以使用：
 
-```
+```shell
 $ git switch -c dev
 ```
 
 直接切换到已有的`master`分支，可以使用：
 
-```
+```shell
 $ git switch master
 ```
 
